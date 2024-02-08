@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxt5gsldkhvuh"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_2mq10"]
+[ext_resource type="Texture2D" uid="uid://brdlapit1xce7" path="res://tilesheets/mapPack_tilesheet.png" id="1_3ywgq"]
+[ext_resource type="Script" path="res://taskManager.gd" id="1_hpqyl"]
+[ext_resource type="PackedScene" uid="uid://bbwg886n1wfn1" path="res://camera/camera.tscn" id="3_2fnnf"]
+[ext_resource type="PackedScene" uid="uid://yn8qum6h3kmg" path="res://pawn/pawn.tscn" id="4_swesd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4a8r"]
+texture = ExtResource("1_3ywgq")
+texture_region_size = Vector2i(64, 64)
+use_texture_padding = false
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+7:1/0 = 0
+7:2/0 = 0
+6:2/0 = 0
+5:2/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+12:5/0 = 0
+12:6/0 = 0
+11:6/0 = 0
+11:5/0 = 0
+10:5/0 = 0
+10:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yn06b"]
+tile_size = Vector2i(64, 64)
+sources/3 = SubResource("TileSetAtlasSource_p4a8r")
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_hpqyl")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+tile_set = SubResource("TileSet_yn06b")
+rendering_quadrant_size = 64
+format = 2
+layer_0/name = "ground"
+layer_1/name = "objects"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "overhang"
+layer_2/tile_data = PackedInt32Array()
+script = ExtResource("1_2mq10")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_2fnnf")]
+
+[node name="Pawn" parent="." instance=ExtResource("4_swesd")]
