@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_ougpa")
-name = "Axe"
-weight = 4.0
+name = ""
+weight = 0.0

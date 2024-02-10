@@ -14,6 +14,7 @@ script = ExtResource("1_2wb2a")
 texture = ExtResource("1_a5d1f")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
